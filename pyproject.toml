@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "website-quality-auditor"
+version = "0.1.0"
+description = "A website quality auditing and crawling application"
+requires-python = ">=3.12"
+dependencies = [
+    "streamlit",
+    "httpx",
+    "beautifulsoup4",
+    "lxml",
+    "pydantic>=2",
+    "pandas",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "ruff",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
